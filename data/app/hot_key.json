@@ -1,0 +1,16 @@
+{
+	"version": 1,
+	"local": {
+		"enable": true,
+		"keys": {
+			"mod+f5": "playToggle",
+			"mod+arrowleft": "previous",
+			"mod+arrowright": "next",
+			"f1": "focusSearchInput"
+		}
+	},
+	"global": {
+		"enable": false,
+		"keys": {}
+	}
+}

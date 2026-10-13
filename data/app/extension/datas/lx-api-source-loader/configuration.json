@@ -1,0 +1,18 @@
+{
+	"importedScriptSources": [
+		{
+			"id": "c30a9ce55767c041335bbe32fd584e19",
+			"name": "HYWmusic_公益版",
+			"version": "v1.2.0",
+			"author": "Ryn",
+			"description": "qq群：1094095648；965503129",
+			"homepage": "https://github.com/Macrohard0001/HYWmusic_source",
+			"allowShowUpdateAlert": true,
+			"fileName": "洛雪音源15.js",
+			"fileDesc": "[v1.2.0@Ryn] qq群：1094095648；965503129"
+		}
+	],
+	"enabledScripts": [
+		"c30a9ce55767c041335bbe32fd584e19"
+	]
+}
