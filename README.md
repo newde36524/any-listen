@@ -1,2 +1,4 @@
 # any-listen
-any-listen 直接使用
+docker compose up
+
+登录密码 123456

@@ -1,0 +1,22 @@
+services:
+  any-listen:
+    image: lyswhut/any-listen-web-server:latest
+    container_name: any-listen
+    ports:
+      # 宿主机 0.0.0.0，可局域网访问。想只允许本机访问改成 "127.0.0.1:9500:9500"。
+      - "9500:9500"
+    volumes:
+      # 配置、扩展、播放列表、缓存都在这里，宿主机 ./data 需提前放好 config.cjs
+      - ./data:/server/data
+      # 本地音乐目录，对应 config.cjs 里的 allowPublicDir: ['/music']
+      - ./music:/music
+    environment:
+      # 必须 0.0.0.0：默认 127.0.0.1 时，Docker Desktop 的端口代理连的是容器 eth0，
+      # 连到容器回环口会直接失败，表现就是宿主机 9500 端口打不开。
+      BIND_IP: "0.0.0.0"
+      # 显式写绝对路径，不依赖镜像 WORKDIR
+      DATA_PATH: /server/data
+      LOG_PATH: /server/data/logs
+      CONFIG_PATH: /server/data/config.cjs
+      ALLOW_PUBLIC_DIR: /music
+    restart: unless-stopped
